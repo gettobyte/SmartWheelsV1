@@ -14,6 +14,9 @@ pin_labels:
 - {pin_num: '8', pin_signal: PTE5, label: LS_MOS_E5, identifier: LS_MOS_E5}
 - {pin_num: '5', pin_signal: PTE11, label: HS_MOS_E11, identifier: HS_MOS_E11}
 - {pin_num: '4', pin_signal: PTD0, label: HS_MOS_D0, identifier: HS_MOS_D0}
+- {pin_num: '58', pin_signal: PTA6, label: RED_LED, identifier: RED_LED}
+- {pin_num: '57', pin_signal: PTA7, label: BLUE_LED, identifier: BLUE_LED}
+- {pin_num: '59', pin_signal: PTE7, label: GREEN_LED, identifier: GREEN_LED}
  * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS ***********
  */
 /* clang-format on */
@@ -52,12 +55,45 @@ BOARD_InitPins:
   - {pin_num: '2', peripheral: PORTE, signal: 'port, 15', pin_signal: PTE15, direction: OUTPUT}
   - {pin_num: '5', peripheral: PORTE, signal: 'port, 11', pin_signal: PTE11, direction: OUTPUT}
   - {pin_num: '4', peripheral: PORTD, signal: 'port, 0', pin_signal: PTD0, direction: OUTPUT}
+  - {pin_num: '58', peripheral: PORTA, signal: 'port, 6', pin_signal: PTA6, direction: OUTPUT}
+  - {pin_num: '57', peripheral: PORTA, signal: 'port, 7', pin_signal: PTA7, direction: OUTPUT}
+  - {pin_num: '59', peripheral: PORTE, signal: 'port, 7', pin_signal: PTE7, direction: OUTPUT}
  * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS ***********
  */
 /* clang-format on */
 
 /* Generate array of configured pin structures */
 pin_settings_config_t g_pin_mux_InitConfigArr0[NUM_OF_CONFIGURED_PINS0] = {
+    {
+        .base            = PORTA,
+        .pinPortIdx      = 6U,
+        .pullConfig      = PORT_INTERNAL_PULL_NOT_ENABLED,
+        .driveSelect     = PORT_LOW_DRIVE_STRENGTH,
+        .passiveFilter   = false,
+        .mux             = PORT_MUX_AS_GPIO,
+        .pinLock         = false,
+        .intConfig       = PORT_DMA_INT_DISABLED,
+        .clearIntFlag    = false,
+        .gpioBase        = PTA,
+        .direction       = GPIO_OUTPUT_DIRECTION,
+        .digitalFilter   = false,
+        .initValue       = 0U,
+    },
+    {
+        .base            = PORTA,
+        .pinPortIdx      = 7U,
+        .pullConfig      = PORT_INTERNAL_PULL_NOT_ENABLED,
+        .driveSelect     = PORT_LOW_DRIVE_STRENGTH,
+        .passiveFilter   = false,
+        .mux             = PORT_MUX_AS_GPIO,
+        .pinLock         = false,
+        .intConfig       = PORT_DMA_INT_DISABLED,
+        .clearIntFlag    = false,
+        .gpioBase        = PTA,
+        .direction       = GPIO_OUTPUT_DIRECTION,
+        .digitalFilter   = false,
+        .initValue       = 0U,
+    },
     {
         .base            = PORTD,
         .pinPortIdx      = 0U,
@@ -181,6 +217,21 @@ pin_settings_config_t g_pin_mux_InitConfigArr0[NUM_OF_CONFIGURED_PINS0] = {
     {
         .base            = PORTE,
         .pinPortIdx      = 5U,
+        .pullConfig      = PORT_INTERNAL_PULL_NOT_ENABLED,
+        .driveSelect     = PORT_LOW_DRIVE_STRENGTH,
+        .passiveFilter   = false,
+        .mux             = PORT_MUX_AS_GPIO,
+        .pinLock         = false,
+        .intConfig       = PORT_DMA_INT_DISABLED,
+        .clearIntFlag    = false,
+        .gpioBase        = PTE,
+        .direction       = GPIO_OUTPUT_DIRECTION,
+        .digitalFilter   = false,
+        .initValue       = 0U,
+    },
+    {
+        .base            = PORTE,
+        .pinPortIdx      = 7U,
         .pullConfig      = PORT_INTERNAL_PULL_NOT_ENABLED,
         .driveSelect     = PORT_LOW_DRIVE_STRENGTH,
         .passiveFilter   = false,

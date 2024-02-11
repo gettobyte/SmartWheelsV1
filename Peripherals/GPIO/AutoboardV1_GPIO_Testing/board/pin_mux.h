@@ -35,9 +35,14 @@ extern "C" {
 #define HS_MOS_E11_PIN     11U
 #define HS_MOS_D0_PORT    PTD
 #define HS_MOS_D0_PIN     0U
-
+#define RED_LED_PORT    PTA
+#define RED_LED_PIN     6U
+#define BLUE_LED_PORT    PTA
+#define BLUE_LED_PIN     7U
+#define GREEN_LED_PORT    PTE
+#define GREEN_LED_PIN     7U
 /*! @brief User number of configured pins */
-#define NUM_OF_CONFIGURED_PINS0 9
+#define NUM_OF_CONFIGURED_PINS0 12
 /*! @brief User configuration structure */
 extern pin_settings_config_t g_pin_mux_InitConfigArr0[NUM_OF_CONFIGURED_PINS0];
 

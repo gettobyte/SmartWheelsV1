@@ -46,6 +46,9 @@ int main(void)
 	  PINS_DRV_SetPins(LS_MOS_E5_PORT, 1 << LS_MOS_E5_PIN);
 	  PINS_DRV_SetPins(HS_MOS_E11_PORT, 1 << HS_MOS_E11_PIN);
 	  PINS_DRV_SetPins(HS_MOS_D0_PORT, 1 << HS_MOS_D0_PIN);
+	  PINS_DRV_SetPins(RED_LED_PORT, 1 << RED_LED_PIN);
+	  PINS_DRV_SetPins(BLUE_LED_PORT, 1 << BLUE_LED_PIN);
+	  PINS_DRV_SetPins(GREEN_LED_PORT, 1 << GREEN_LED_PIN);
 
 
     for(;;)
@@ -71,6 +74,16 @@ int main(void)
 
     	      PINS_DRV_TogglePins(HS_MOS_D0_PORT, 1 << HS_MOS_D0_PIN);
     	      delay(720000);
+
+    	      PINS_DRV_TogglePins(RED_LED_PORT, 1 << RED_LED_PIN);
+    	      delay(720000);
+
+    	      PINS_DRV_TogglePins(BLUE_LED_PORT, 1 << BLUE_LED_PIN);
+    	      delay(720000);
+
+    	      PINS_DRV_TogglePins(GREEN_LED_PORT, 1 << GREEN_LED_PIN);
+    	      delay(720000);
+
 
     }
 }
